@@ -1,4 +1,4 @@
-package com.luo.webmagic.unitl;
+package site.taru.magic.unitl;
 
 import java.util.Random;
 
