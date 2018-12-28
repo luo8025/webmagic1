@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="site.taru.magic.mapper.NewsMapper" >
-    <resultMap id="news" type="site.taru.magic.entity.News" >
-        <id column="id" property="id" />
+<mapper namespace="site.taru.magic.mapper.NewsMapper">
+    <resultMap id="news" type="site.taru.magic.entity.News">
+        <id column="id" property="id"/>
         <result column="title" property="title"/>
-        <result column="url" property="url"/>
         <result column="hot" property="hot"/>
         <result column="source" property="source"/>
+        <result column="url" property="url"/>
         <result column="create_time" property="createTime"/>
         <result column="delete" property="delete"/>
     </resultMap>
 
-    <insert id="insert" parameterType="site.taru.magic.entity.News" >
+    <insert id="insert" parameterType="site.taru.magic.entity.News">
         insert into news
         VALUES
         (
         uuid(),
         #{title},
-        #{url},
         #{hot},
         #{source},
+        #{url},
         now(),
         0
         )

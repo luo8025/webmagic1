@@ -12,8 +12,8 @@ import java.util.List;
 
 /**
  * @author code4crafer@gmail.com
- *         Date: 13-6-23
- *         Time: 下午8:56
+ * Date: 13-6-23
+ * Time: 下午8:56
  */
 @Component("NewsPipeline")
 public class NewsPipeline implements Pipeline {
@@ -23,11 +23,8 @@ public class NewsPipeline implements Pipeline {
 
     @Override
     public void process(ResultItems resultItems, Task task) {
-        List<News> items=resultItems.get("news");
-        System.out.println(items.size());
-
-        for (int i=0;i<items.size();i++) {
-            System.out.println();
+        List<News> items = resultItems.get("news");
+        for (int i = 0; i < items.size(); i++) {
             newsMapper.insert(items.get(i));
         }
     }
