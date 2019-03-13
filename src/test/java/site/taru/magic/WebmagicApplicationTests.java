@@ -1,4 +1,4 @@
-package com.luo.webmagic;
+package site.taru.magic;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

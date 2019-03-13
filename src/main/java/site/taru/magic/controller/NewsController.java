@@ -2,8 +2,10 @@ package site.taru.magic.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import site.taru.magic.pipeline.NewsPipeline;
+import site.taru.magic.process.DankeProcess;
 import site.taru.magic.process.V2exProcess;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.downloader.HttpClientDownloader;
@@ -23,15 +25,15 @@ public class NewsController {
                 .run();
         return "xxxx";
     }
-
-    @GetMapping("/tt")
-    public String toutiao() {
+    @GetMapping("/danke")
+    public String danke() {
         HttpClientDownloader httpClientDownloader = new HttpClientDownloader();
-        Spider.create(new ToutiaoProcess())
-                .addUrl("https://www.toutiao.com/ch/news_hot/")
+        Spider.create(new DankeProcess())
+                .addUrl("https://www.dankegongyu.com/")
                 .addPipeline(newsPipeline)
                 .thread(1)
                 .run();
         return "xxxx";
     }
+
 }
